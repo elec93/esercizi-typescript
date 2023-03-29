@@ -1,18 +1,27 @@
-// Prevent the array from being modified.
-// Use the generic interface type `ReadonlyArray`: ReadonlyArray<type>
+/**
+ * START: Follow the instructions below.
+ */
+
+// Add a tuple type annotation for this tuple.
+
+const countryPopulation: [string, number] = ["China", 1_412_600_000];
+
+// Change the `CountryWithPopulation` type into a tuple type.
+// This should fix the type error on Line 14.
+
+type CountryWithCurrency = [string, string, string];
+
+const countryCurrency: CountryWithCurrency = ["Italy", "Euro", "EUR"];
+
+// Add a tuple type annotation that prevents this tuple from being modified.
+// Use the readonly modifier and the tuple type syntax: readonly [type, type]
 // This will cause a type error. Remove the code that now has a type error.
 
-const languages: ReadonlyArray<string> = ["Mongolian", "French", "Basque", "Thai"];
-// languages[2] = "Hausa";
-console.log(languages);
+const countryLanguage: readonly[string, string] = ["Greece", "Greek"];
 
-// Prevent the array from being modified.
-// Use the readonly modifier and the array literal type syntax: readonly type[]
-// This will cause a type error. Remove the code that now has a type error.
+// countryLanguage.reverse();
 
-const currencies: readonly string[] = ["NZD", "THB", "NGN", "EUR", "COP", "INR"];
-// currencies.reverse();
-console.log(currencies);
+console.log(countryLanguage);
 
 // ----
 
