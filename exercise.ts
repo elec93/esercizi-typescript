@@ -21,7 +21,7 @@ const countryData: Country = {
 
 // Define a `Currency` type alias that describes the object in this variable.
 // Add the `Currency` type as a type annotation for this variable.
-type Currency{
+type Currency = {
     name: string,
     code: string,
     symbol: string,
