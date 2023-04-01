@@ -2,53 +2,34 @@
  * START: Follow the instructions below.
  */
 
-// The objects in the `countries` array use strings as the values of the
-// `currency` properties.
-// Complete this numeric enum so that it can be used instead of strings.
-// Hint: Use the string values in the `currency` properties as the enum members.
-enum Currency {
-  Euro,
-  Dollar
+// The `Currency` type doesn't work for the type of value in the
+// `narniaCurrency` variable. Change the `Currency` type into a
+// union type that works for both the variables.
+//
+// This should fix the type error on Line 15.
+
+type Currency = string | boolean;
+
+let indianCurrency: Currency = "Indian rupee";
+
+let narniaCurrency: Currency = false;
+
+// Change the type for the `data` function parameter so it can accept
+// the different types of data that are passed when it's being called.
+//
+// This should fix the type error on Lines 28 and 30.
+
+function outputCountryData(country: string, data: number | string) {
+    console.log(`The data for ${country} is: ${data}`);
 }
 
-// Update the type for the `currency` property in this interface to use
-// the `Currency` enum.
-interface Country {
-    name: string;
-    currency: Currency;
-}
+outputCountryData("Italy", 60_317_116);
 
-// Replace the string values for the `currency` properties below with
-const countries: Country[] = [
-    {
-        name: "France",
-        currency: Currency.Euro,
-    },
-    {
-        name: "United States of America",
-        currency: Currency.Dollar,
-    },
-    {
-        name: "Italy",
-        currency: Currency.Euro,
-    },
-    {
-        name: "New Zealand",
-        currency: Currency.Dollar,
-    },
-];
+outputCountryData("Nigeria", "Naira");
 
-// Create a string enum named `LanguageStatus`. Use it to replace the
-// string values for the `status` properties in the objects below.
-enum LanguageStatus {
-    primary = "primary",
-    secondary = "secondary" 
-}
+outputCountryData("United States of America", "English");
 
-const countryLanguages = [
-    { language: "Spanish", status: LanguageStatus.primary },
-    { language: "English", status: LanguageStatus.secondary },
-];
+outputCountryData("India", 1_352_642_280);
 
 // ----
 
