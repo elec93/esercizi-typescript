@@ -1,5 +1,5 @@
 class Currency {
-  private name: string;
+protected name: string;
   private code: string;
   private symbol: string;
 
@@ -32,9 +32,6 @@ class DetailedCurrency extends Currency {
     this.banknotes = banknotes;
   }
 
-  
-//FINIRE STA PARTE SOTTO
-
   // Change the visibility modifier on this method so it can be called
   // by code outside of this class.
   public describeBankNotes() {
@@ -45,8 +42,7 @@ class DetailedCurrency extends Currency {
 
     // Replace `null` with the value of the `banknotes` field.
 
-    description += null;
-
+    description += this.banknotes.join(", ");
     console.log(description);
   }
 }
